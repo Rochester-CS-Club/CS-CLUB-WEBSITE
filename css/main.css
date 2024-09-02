@@ -793,8 +793,8 @@ section .row span {
     background-image: linear-gradient(180deg, #000000 0%, #36dc5d 100%);
     color: #fff;
     height: 100%;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     padding-bottom: 10%;
 }
 
