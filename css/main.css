@@ -27,7 +27,7 @@ body {
     width: 100%;
     margin: 1rem 0;
     border: 0;
-    border-top: 2px solid rgba(255, 255, 255, .1)
+    border-top: 2px solid rgba(255, 255, 255, 0)
 
 
 
@@ -793,10 +793,12 @@ section .row span {
     background-image: linear-gradient(180deg, #000000 0%, #36dc5d 100%);
     color: #fff;
     height: 100%;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    padding-bottom: 10%
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    padding-bottom: 10%;
 }
+
+
 
 @media(max-width: 75em) {
     upcoming {
