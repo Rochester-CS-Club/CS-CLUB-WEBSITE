@@ -915,3 +915,27 @@ upcoming .about-wrapper__info {
         transform: none
     }
 }
+
+#contact .contact-wrapper {
+    margin-top: 3.2rem;
+    padding: 0 2rem;
+    backface-visibility: hidden;
+}
+#contact .contact-wrapper__text {
+    margin-bottom: 2.5rem;
+}
+#contact .contact-wrapper__text,
+#contact .contact-wrapper a {
+    font-size: 2.4rem;
+}
+@media (max-width: 37.5em) {
+    #contact .contact-wrapper__text,
+    #contact .contact-wrapper a {
+        font-size: 2rem;
+    }
+}
+#contact .contact-wrapper__text-title {
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+    font-size: 2.5rem;
+}
