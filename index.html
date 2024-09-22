@@ -42,7 +42,7 @@ Have fun creating your portfolio on this template!!! -->
     <meta property="og:description" content="Home of CS Club Memebers" />
     <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail -->
     <meta property="og:image" content="assets/logo.png" />
-<!--      so that a thumbnail image of your portfolio is shown while shared on other platform &ndash;&gt;-->
+    <!--      so that a thumbnail image of your portfolio is shown while shared on other platform &ndash;&gt;-->
 
 
     <!-- Twitter -->
@@ -54,7 +54,28 @@ Have fun creating your portfolio on this template!!! -->
     <!-- short description that shows up while your portfolio is shared -->
 
     <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
+    <style>
+        .horizontal-space {
+            margin-right: 10px; /* Adjust the value as needed */
+        }
+        .vertical-space {
+            margin-right: 10px; /* Adjust the value as needed */
+        }
+        .text-color-main {
+            color: #36d1dc; /* Adjust the value as needed */
+        }
 
+    /*  if its a phone then i need all the childs to be in the next line*/
+        @media (max-width: 768px) {
+            .hero-cta {
+                display: flex;
+                flex-direction: column;
+            }
+            .cta-btn {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
     <!-- link tags -->
     <link rel="preload" as="style" href="/css/main.css" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -104,50 +125,40 @@ Have fun creating your portfolio on this template!!! -->
             <br />
             from <span class="text-color-main">Rochester High School</span>
         </h1>
+        <p class="hero-cta">
+            <a class="cta-btn cta-btn--hero horizontal-space" href="#about">About Us</a>
+            <a class="cta-btn cta-btn--hero horizontal-space" href="#projects">Our Projects</a>
+            <a class="cta-btn cta-btn--hero horizontal-space" href="#contact">Contact Us</a>
+        </p>
+        <br>
+        <p class="hero-cta">
+            <a class="cta-btn cta-btn--hero horizontal-space" href="https://tce.me/iOUQ5B">Apply Now!!</a>
+            <a class="cta-btn cta-btn--hero horizontal-space" href="javascript:void(0);" onclick="openForm()">Interest Form</a>
+            <a class="cta-btn cta-btn--hero horizontal-space" href="/attendance.html">Attendance</a>
+        </p>
 
-        <div class="horizontal-line">
-            <p class="hero-cta">
-                <a class="cta-btn cta-btn--hero" href="#about">About Us</a>
-            </p>
-            <p class="hero-cta">
-                <a class="cta-btn cta-btn--hero" href="#projects">Our Projects</a>
-            </p>
-
-        </div>
-        <div class="horizontal-line">
-            <p class="hero-cta">
-                <a class="cta-btn cta-btn--hero" href="#contact">Contact Us</a>
-            </p>
-            <p class="hero-cta">
-                <a class="cta-btn cta-btn--hero" href="https://tce.me/iOUQ5B">Apply Now!!</a>
-            </p>
-            <p class="hero-cta">
-                <a class="cta-btn cta-btn--hero" href="javascript:void(0);" onclick="openForm()">Interest Form</a>
-            </p>
-            <div id="filloutForm" style="width:100%; height:500px; display:none;" data-fillout-id="2KZnnNpLfbus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
-<script src="https://server.fillout.com/embed/v1/"></script>
-<script>
-    function openForm() {
-        var form = document.getElementById('filloutForm');
-        if (form.style.display === 'none') {
-            form.style.display = 'block';
-            form.style.position = 'fixed';
-            form.style.height = '100%';
-            form.style.width = '100%';
-            form.style.top = '50%';
-            form.style.left = '50%';
-            form.style.transform = 'translate(-50%, -50%)';
-            form.style.zIndex = '1000';
-            form.style.backgroundColor = 'black';
-            form.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-            form.style.padding = '20px';
-        } else {
-            form.style.display = 'none';
-        }
-    }
-</script>
-        </div>
-
+        <div id="filloutForm" style="width:100%; height:500px; display:none;" data-fillout-id="2KZnnNpLfbus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+        <script src="https://server.fillout.com/embed/v1/"></script>
+        <script>
+            function openForm() {
+                var form = document.getElementById('filloutForm');
+                if (form.style.display === 'none') {
+                    form.style.display = 'block';
+                    form.style.position = 'fixed';
+                    form.style.height = '100%';
+                    form.style.width = '100%';
+                    form.style.top = '50%';
+                    form.style.left = '50%';
+                    form.style.transform = 'translate(-50%, -50%)';
+                    form.style.zIndex = '1000';
+                    form.style.backgroundColor = 'black';
+                    form.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                    form.style.padding = '20px';
+                } else {
+                    form.style.display = 'none';
+                }
+            }
+        </script>
 
 
 
@@ -178,7 +189,7 @@ Have fun creating your portfolio on this template!!! -->
                     The CS Club is a vibrant community for students passionate about computer science and technology. We focus on learning and applying coding skills through hands-on projects, workshops, and collaborations. Our club fosters a supportive environment where members can explore various programming languages, engage in exciting challenges, and work on real-world projects. Whether you're a beginner or an experienced coder, the CS Club offers opportunities to enhance your skills, connect with like-minded peers, and make a meaningful impact in the tech world.                <p class="about-wrapper__info-text">
                 We meet every week in Room B123, with a special meeting at the end of the year. At the end-of-year meeting, members have the chance to showcase their work, whether it's games, apps, or other programming projects. After presenting their projects, members can engage in discussions, receive feedback, and explore new ideas for future development. It's a great opportunity to celebrate achievements and inspire one another.
 
-                </p>
+            </p>
                 <span class="about-wrapper__cta">
               <a href="#" class="cta-btn cta-btn--resume">Our Members</a>
             </span>
@@ -216,7 +227,7 @@ Have fun creating your portfolio on this template!!! -->
                         >
                     </div>
                 </div>
-                
+
                 <div class="project-wrapper__image">
                     <a href="https://programers-handbook.vercel.app" target="_blank" rel="noopener noreferrer">
                         <div class="thumbnail rounded">
@@ -329,7 +340,7 @@ Have fun creating your portfolio on this template!!! -->
         <h2 class="section-title">Contact</h2>
         <div class="contact-wrapper">
             <p class="contact-wrapper__text">Mail Me!!</p>
-<a href="#" id="contact-btn" class="cta-btn cta-btn--resume">Shoot a Mail</a></div>
+            <a href="#" id="contact-btn" class="cta-btn cta-btn--resume">Shoot a Mail</a></div>
     </div>
 </section>
 <!-- END Contact Section -->
@@ -384,11 +395,11 @@ Have fun creating your portfolio on this template!!! -->
 <script>
     document.getElementById("year").textContent = new Date().getFullYear().toString();
     document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('contact-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        window.location.href = 'mailto:raruls9099@rcs-k12.us';
+        document.getElementById('contact-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'mailto:raruls9099@rcs-k12.us';
+        });
     });
-});
 </script>
 <script src="javascript/vanilla-tilt.min.js"></script>
 <script type="text/javascript" src="./javascript/valtilt.js"></script>

@@ -9,11 +9,11 @@
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous" />
     <!-- CSS -->
-    <title>OTP Field Form - Coding Torque</title>
+    <title>Attendance</title>
 </head>
 <body>
-<p>OTP sent on ....12@gmail.com</p>
-<h1>Enter OTP</h1>
+<p>Enter the PassCode from the Board</p>
+<h1>Falcon Code</h1>
 <div class="otp-field">
     <input type="text" maxlength="1" />
     <input type="text" maxlength="1" />
@@ -21,6 +21,11 @@
     <input type="text" maxlength="1" />
     <input type="text" maxlength="1" />
     <input type="text" maxlength="1" />
+</div>
+<br>
+<br>
+<div>
+    <button style="" onclick="submit()">Submit</button>
 </div>
 <script>
     const inputs = document.querySelectorAll(".otp-field input");
@@ -52,7 +57,7 @@
             input.previousElementSibling.focus();
         }
         
-        if (fieldIndex == inputs.length - 1 && isValidInput) {
+        if (fieldIndex === inputs.length - 1 && isValidInput) {
             submit();
         }
     }
@@ -76,7 +81,7 @@
             input.classList.add("disabled");
         });
         console.log(otp);
-        // 👉 Call API below
+
     }
 </script>
 <style>
@@ -87,7 +92,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: #282a36;
+        background: #1f202e;
         height: 100vh;
         color: #fff;
     }
@@ -125,4 +130,43 @@
     }
 </style>
 </body>
+<style>
+    /* From Uiverse.io by adamgiebl */
+    button {
+        --green: #dfe0e6;
+        font-size: 15px;
+        padding: 0.7em 2.7em;
+        letter-spacing: 0.06em;
+        position: relative;
+        font-family: inherit;
+        border-radius: 0.6em;
+        overflow: hidden;
+        transition: all 0.3s;
+        line-height: 1.4em;
+        border: 2px solid var(--green);
+        background: linear-gradient(to right, rgba(87, 140, 195, 0.49) 1%, transparent 40%,transparent 60% , rgba(112, 122, 228, 0.43) 100%);
+        color: var(--green);
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+    }
+
+    button:hover {
+        color: #82ffc9;
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+    }
+
+    button:before {
+        content: "";
+        position: absolute;
+        left: -4em;
+        width: 4em;
+        height: 100%;
+        top: 0;
+        transition: transform .4s ease-in-out;
+        background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+    }
+
+    button:hover:before {
+        transform: translateX(15em);
+    }
+</style>
 </html>
