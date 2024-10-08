@@ -136,6 +136,10 @@ Have fun creating your portfolio on this template!!! -->
             <a class="cta-btn cta-btn--hero horizontal-space" href="javascript:void(0);" onclick="openForm()">Interest Form</a>
             <a class="cta-btn cta-btn--hero horizontal-space" href="/attendance.html">Attendance</a>
         </p>
+        <br>
+        <p class="hero-cta">
+            <a class="cta-btn cta-btn--hero horizontal-space" href="https://discord.gg/8Z8Q6Z2">Discord</a>
+            <a class="cta-btn cta-btn--hero horizontal-space" id="test-me-btn">Test Me!</a>        </p>
 
         <div id="filloutForm" style="width:100%; height:500px; display:none;" data-fillout-id="2KZnnNpLfbus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
         <script src="https://server.fillout.com/embed/v1/"></script>
@@ -400,6 +404,30 @@ Have fun creating your portfolio on this template!!! -->
             window.location.href = 'mailto:raruls9099@rcs-k12.us';
         });
     });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var testMeBtn = document.getElementById('test-me-btn');
+
+    testMeBtn.addEventListener('click', function () {
+        fetch('javaSnippets.json')
+            .then(response => response.json())
+            .then(snippets => {
+                var randomSnippet = snippets[Math.floor(Math.random() * snippets.length)];
+                var snippetCode = randomSnippet.code;
+                var snippetTitle = randomSnippet.title;
+                var snippetIssue = randomSnippet.issue;
+
+                navigator.clipboard.writeText(snippetCode).then(function () {
+                    alert(`Java snippet copied to clipboard!\nTitle: ${snippetTitle}\nIssue: ${snippetIssue}`);
+                }, function (err) {
+                    console.error('Could not copy text: ', err);
+                });
+            })
+            .catch(error => console.error('Error fetching snippets:', error));
+    });
+});
+
+
 </script>
 <script src="javascript/vanilla-tilt.min.js"></script>
 <script type="text/javascript" src="./javascript/valtilt.js"></script>

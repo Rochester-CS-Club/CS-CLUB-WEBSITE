@@ -1,0 +1,158 @@
+[
+  {
+    "title": "Print Integer",
+    "code": "public class PrintInt {\n    public static void main(String[] args) {\n        int number = 10;\n        System.out.println(\"The number is: \" + number)\n    }\n}",
+    "issue": "Missing semicolon after `System.out.println(...)`"
+  },
+  {
+    "title": "Basic If Statement",
+    "code": "public class IfExample {\n    public static void main(String[] args) {\n        int a = 5;\n        if(a = 5) {\n            System.out.println(\"a equals 5\");\n        }\n    }\n}",
+    "issue": "Assignment `=` instead of equality check `==` in the `if` condition"
+  },
+  {
+    "title": "Sum of Two Doubles",
+    "code": "import java.util.Scanner;\n\npublic class SumDoubles {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        System.out.print(\"Enter first number: \");\n        double num1 = scanner.nextDouble;\n        System.out.print(\"Enter second number: \");\n        double num2 = scanner.nextDouble;\n        double sum = num1 + num2;\n        System.out.println(\"Sum: \" + sum);\n    }\n}",
+    "issue": "Missing parentheses after `nextDouble` in the input statements"
+  },
+  {
+    "title": "Logical Operators",
+    "code": "public class LogicalOps {\n    public static void main(String[] args) {\n        boolean isSunny = true;\n        boolean isWeekend = true;\n        if(isSunny && isWeekend || isWeekend) {\n            System.out.println(\"Let's go for a hike!\");\n        }\n    }\n}",
+    "issue": "Logical operators ambiguity—order of operations may be unclear, should use parentheses for clarity"
+  },
+  {
+    "title": "For Loop",
+    "code": "public class ForLoopExample {\n    public static void main(String[] args) {\n        for(int i = 0; i <= 10; i++) {\n            System.out.println(\"Number: \" + i);\n        }\n    }\n}",
+    "issue": "Condition should be `i < 10` for a loop running from 0 to 9"
+  },
+  {
+    "title": "Not Equal Check",
+    "code": "public class NotEqualExample {\n    public static void main(String[] args) {\n        int x = 5;\n        int y = 10;\n        if(x =! y) {\n            System.out.println(\"x is not equal to y\");\n        }\n    }\n}",
+    "issue": "Incorrect use of `=!`, should be `!=` for not equal comparison"
+  },
+  {
+    "title": "Switch Statement",
+    "code": "public class SwitchExample {\n    public static void main(String[] args) {\n        int day = 2;\n        switch(day) {\n            case 1:\n                System.out.println(\"Monday\");\n            case 2:\n                System.out.println(\"Tuesday\");\n            case 3:\n                System.out.println(\"Wednesday\");\n        }\n    }\n}",
+    "issue": "Missing `break` statements in the `switch` cases, causing fall-through"
+  },
+  {
+    "title": "Using Double for Division",
+    "code": "public class Division {\n    public static void main(String[] args) {\n        int num1 = 10;\n        int num2 = 3;\n        double result = num1 / num2;\n        System.out.println(\"Result: \" + result);\n    }\n}",
+    "issue": "Integer division, should cast `num1` or `num2` to `double` for correct decimal result"
+  },
+  {
+    "title": "While Loop",
+    "code": "public class WhileLoopExample {\n    public static void main(String[] args) {\n        int count = 0;\n        while(count <= 5) {\n            System.out.println(\"Count: \" + count);\n        }\n    }\n}",
+    "issue": "Infinite loop—missing increment `count++` inside the `while` loop"
+  },
+  {
+    "title": "Boolean Comparison",
+    "code": "public class BooleanComparison {\n    public static void main(String[] args) {\n        boolean isTrue = true;\n        if(isTrue == false) {\n            System.out.println(\"This is false\");\n        }\n    }\n}",
+    "issue": "Confusing comparison—using `if(isTrue)` would be clearer than `if(isTrue == false)`"
+  },
+  {
+    "title": "Array Initialization",
+    "code": "public class ArrayExample {\n    public static void main(String[] args) {\n        int[] numbers = new int[5];\n        numbers[0] = 1;\n        numbers[1] = 2;\n        numbers[2] = 3;\n        numbers[4] = 4;\n        numbers[5] = 5;\n    }\n}",
+    "issue": "Array index out of bounds—should use `numbers[3] = 4` instead of `numbers[4] = 4` and `numbers[4] = 5` instead of `numbers[5] = 5`",
+  },
+  {
+    "title": "NullPointer Exception in Object Initialization",
+    "code": "public class Person {\n    String name;\n    public static void main(String[] args) {\n        Person person = new Person();\n        System.out.println(person.name.length());\n    }\n}",
+    "issue": "The `name` field is not initialized, causing a `NullPointerException` when accessing `name.length()`"
+  },
+  {
+    "title": "ArrayIndexOutOfBounds Exception",
+    "code": "public class ArrayExample {\n    public static void main(String[] args) {\n        int[] numbers = {1, 2, 3, 4};\n        for(int i = 0; i <= numbers.length; i++) {\n            System.out.println(numbers[i]);\n        }\n    }\n}",
+    "issue": "The loop iterates one time too many, causing an `ArrayIndexOutOfBoundsException` by accessing `numbers[numbers.length]`"
+  },
+  {
+    "title": "Incorrect Exception Handling",
+    "code": "public class ExceptionExample {\n    public static void main(String[] args) {\n        try {\n            int result = 10 / 0;\n        } catch (NullPointerException e) {\n            System.out.println(\"Null pointer exception occurred\");\n        }\n    }\n}",
+    "issue": "The code generates an `ArithmeticException`, but the `catch` block only handles `NullPointerException`, leading to an uncaught exception"
+  },
+  {
+    "title": "Recursion Stack Overflow",
+    "code": "public class RecursionExample {\n    public static void main(String[] args) {\n        factorial(5);\n    }\n    public static int factorial(int n) {\n        return n * factorial(n-1);\n    }\n}",
+    "issue": "Missing base case in the recursion causes a `StackOverflowError` due to infinite recursive calls"
+  },
+  {
+    "title": "Deadlock in Multi-threading",
+    "code": "public class DeadlockExample {\n    public static void main(String[] args) {\n        final Object lock1 = new Object();\n        final Object lock2 = new Object();\n\n        Thread t1 = new Thread(() -> {\n            synchronized(lock1) {\n                System.out.println(\"Thread 1: Holding lock1...\");\n                try { Thread.sleep(100); } catch (InterruptedException e) {}\n                synchronized(lock2) {\n                    System.out.println(\"Thread 1: Holding lock2...\");\n                }\n            }\n        });\n\n        Thread t2 = new Thread(() -> {\n            synchronized(lock2) {\n                System.out.println(\"Thread 2: Holding lock2...\");\n                try { Thread.sleep(100); } catch (InterruptedException e) {}\n                synchronized(lock1) {\n                    System.out.println(\"Thread 2: Holding lock1...\");\n                }\n            }\n        });\n\n        t1.start();\n        t2.start();\n    }\n}",
+    "issue": "The program creates a potential deadlock, with two threads holding locks and waiting on each other, leading to a system freeze"
+  },
+  {
+    "title": "Incorrectly Overridden Equals Method",
+    "code": "public class EqualsExample {\n    private int value;\n\n    public EqualsExample(int value) {\n        this.value = value;\n    }\n\n    @Override\n    public boolean equals(EqualsExample obj) {\n        return this.value == obj.value;\n    }\n\n    public static void main(String[] args) {\n        EqualsExample obj1 = new EqualsExample(5);\n        EqualsExample obj2 = new EqualsExample(5);\n        System.out.println(obj1.equals(obj2));\n    }\n}",
+    "issue": "Incorrect method signature for `equals`—should override `equals(Object obj)` instead of `equals(EqualsExample obj)`"
+  },
+  {
+    "title": "Concurrent Modification Exception",
+    "code": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class ConcurrentModification {\n    public static void main(String[] args) {\n        List<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"B\");\n        list.add(\"C\");\n\n        for(String s : list) {\n            if(s.equals(\"B\")) {\n                list.remove(s);\n            }\n        }\n    }\n}",
+    "issue": "Removing an element from a list while iterating causes a `ConcurrentModificationException`"
+  },
+  {
+    "title": "String Comparison Using ==",
+    "code": "public class StringComparison {\n    public static void main(String[] args) {\n        String str1 = new String(\"Hello\");\n        String str2 = new String(\"Hello\");\n        if(str1 == str2) {\n            System.out.println(\"Strings are equal\");\n        } else {\n            System.out.println(\"Strings are not equal\");\n        }\n    }\n}",
+    "issue": "Using `==` for string comparison checks reference equality instead of value equality. Should use `str1.equals(str2)`"
+  },
+  {
+    "title": "Floating Point Comparison",
+    "code": "public class FloatingPointExample {\n    public static void main(String[] args) {\n        double num1 = 0.1;\n        double num2 = 0.2;\n        double sum = num1 + num2;\n        if(sum == 0.3) {\n            System.out.println(\"Sum is 0.3\");\n        } else {\n            System.out.println(\"Sum is not 0.3\");\n        }\n    }\n}",
+    "issue": "Floating-point precision issue: due to the imprecision of double values, the sum is not exactly `0.3`, so the condition fails"
+  },
+  {
+    "title": "Misused Generics",
+    "code": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class GenericsExample {\n    public static void main(String[] args) {\n        List<Object> list = new ArrayList<>();\n        list.add(1);\n        list.add(\"Hello\");\n\n        for(String s : list) {\n            System.out.println(s);\n        }\n    }\n}",
+    "issue": "Generic type mismatch—attempting to iterate over a list of `Object` with a `for-each` loop of type `String`"
+  },
+  {
+    "title": "Inheritance with Missing Super Constructor Call",
+    "code": "class Animal {\n    String name;\n    public Animal(String name) {\n        this.name = name;\n    }\n}\n\nclass Dog extends Animal {\n    public Dog() {\n        // No call to super()\n        System.out.println(\"Dog created\");\n    }\n    public static void main(String[] args) {\n        Dog dog = new Dog();\n    }\n}",
+    "issue": "The `Dog` class constructor does not call the parent class `Animal` constructor, causing a compilation error."
+  },
+  {
+    "title": "Interface Implementation with Missing Method",
+    "code": "interface Shape {\n    double area();\n    double perimeter();\n}\n\nclass Circle implements Shape {\n    private double radius;\n    public Circle(double radius) {\n        this.radius = radius;\n    }\n    @Override\n    public double area() {\n        return Math.PI * radius * radius;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Shape circle = new Circle(5);\n        System.out.println(\"Area: \" + circle.area());\n        System.out.println(\"Perimeter: \" + circle.perimeter());\n    }\n}",
+    "issue": "The `Circle` class does not implement the `perimeter()` method from the `Shape` interface, causing a compilation error."
+  },
+  {
+    "title": "Abstract Class Missing Implementation",
+    "code": "abstract class Vehicle {\n    public abstract void startEngine();\n    public abstract void stopEngine();\n}\n\nclass Car extends Vehicle {\n    @Override\n    public void startEngine() {\n        System.out.println(\"Car engine started\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Vehicle car = new Car();\n        car.startEngine();\n        car.stopEngine();\n    }\n}",
+    "issue": "The `Car` class does not implement the `stopEngine()` method, which is required by the abstract class `Vehicle`, leading to a compilation error."
+  },
+  {
+    "title": "Composition with Null Object Reference",
+    "code": "class Engine {\n    public void start() {\n        System.out.println(\"Engine started\");\n    }\n}\n\nclass Car {\n    private Engine engine;\n    public Car(Engine engine) {\n        this.engine = engine;\n    }\n    public void drive() {\n        engine.start();\n        System.out.println(\"Car is driving\");\n    }\n    public static void main(String[] args) {\n        Car car = new Car(null);\n        car.drive();\n    }\n}",
+    "issue": "The `Car` class attempts to use a `null` engine object, causing a `NullPointerException` when calling `engine.start()`."
+  },
+  {
+    "title": "Polymorphism with Incorrect Type Casting",
+    "code": "class Animal {\n    public void speak() {\n        System.out.println(\"Animal speaks\");\n    }\n}\n\nclass Dog extends Animal {\n    public void speak() {\n        System.out.println(\"Dog barks\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal animal = new Animal();\n        Dog dog = (Dog) animal;\n        dog.speak();\n    }\n}",
+    "issue": "Attempting to cast a `Animal` object to a `Dog` will cause a `ClassCastException` at runtime, since `animal` is not an instance of `Dog`."
+  },
+  {
+    "title": "Method Overriding with Static Methods",
+    "code": "class Parent {\n    public static void display() {\n        System.out.println(\"Parent display\");\n    }\n}\n\nclass Child extends Parent {\n    public static void display() {\n        System.out.println(\"Child display\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        p.display();\n    }\n}",
+    "issue": "Static methods are not overridden but hidden. Therefore, `Parent`'s `display()` method will be called instead of `Child`'s, even though the object is of type `Child`."
+  },
+  {
+    "title": "Circular Dependency Between Classes",
+    "code": "class A {\n    private B b;\n    public A(B b) {\n        this.b = b;\n    }\n}\n\nclass B {\n    private A a;\n    public B(A a) {\n        this.a = a;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        A a = new A(new B(new A(null)));\n    }\n}",
+    "issue": "Creating instances of classes `A` and `B` in a circular dependency will cause a `StackOverflowError` due to infinite recursion in constructors."
+  },
+  {
+    "title": "Calling Parent Method from Child with Super",
+    "code": "class Parent {\n    public void display() {\n        System.out.println(\"Parent display\");\n    }\n}\n\nclass Child extends Parent {\n    @Override\n    public void display() {\n        System.out.println(\"Child display\");\n    }\n\n    public void callParentDisplay() {\n        super.display();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Child child = new Child();\n        child.callParentDisplay();\n    }\n}",
+    "issue": "The code correctly uses `super` to call the parent method, but learners may overlook this feature, and the code subtly requires understanding of method overriding and super calls."
+  },
+  {
+    "title": "Misuse of 'this' in Static Context",
+    "code": "class Person {\n    private String name;\n\n    public Person(String name) {\n        this.name = name;\n    }\n\n    public static void printName() {\n        System.out.println(this.name);\n    }\n\n    public static void main(String[] args) {\n        Person.printName();\n    }\n}",
+    "issue": "The `this` keyword cannot be used in a static method, causing a compilation error."
+  },
+  {
+    "title": "Overloading with Varied Parameter Types",
+    "code": "class Calculator {\n    public int add(int a, int b) {\n        return a + b;\n    }\n    public double add(double a, double b) {\n        return a + b;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Calculator calc = new Calculator();\n        System.out.println(calc.add(5, 10));\n        System.out.println(calc.add(5.0, 10));\n    }\n}",
+    "issue": "This code seems correct but may cause confusion since the overloaded method is not fully applicable for mixed types (int and double) in the second `add` call."
+  }
+]
+
